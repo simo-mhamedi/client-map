@@ -1,0 +1,89 @@
+
+<div class="hearder">
+	<button (click)="sidebarVisible=true" type="button" class="btn menu"><i class="fa-solid fa-bars"></i> </button>
+	<button type="button" class="btn search"><i class="fa-solid fa-magnifying-glass"></i> </button>
+</div>
+<p-sidebar [(visible)]="sidebarVisible">
+	<div class="side-header">
+		<h3>Bienvenue,</h3>
+		<p>
+			pour une bonne experience
+		</p>
+	</div>
+	<div class="side-content">
+		<button class="btn btn-primary login"><i class="fa-regular fa-user"></i> <span> SE CONNECTER</span></button>
+		<button class="btn btn-success insert-ann">Déposer une annonce</button>
+	</div>
+	<div class="service-list">
+		<div class="service">
+			<i class="fa-solid fa-location-dot"></i>
+			<span>Découvrir</span>
+		</div>
+		<div class="service">
+			<i class="fa-regular fa-comment"></i>
+			<span>Chat</span>
+		</div>
+		<div class="service">
+			<i class="fa-solid fa-headset"></i>
+			<span>Support</span>
+		</div>
+		<div class="service">
+			<i class="fa-regular fa-heart"></i>
+			<span>Favoris</span>
+		</div>
+		<div class="service">
+			<i class="fa-regular fa-flag"></i>
+			<span>Francais</span>
+		</div>
+	</div>
+</p-sidebar>
+<div class="form">
+	<div class="hearder-text">
+		Inscrivez vous
+	</div>
+
+	<div class="inputs">
+		<div class="inputs">
+			<div class="input">
+			  <label for="username" class="block text-900 text-xl font-medium mb-2">User name</label>
+			  <input id="username" type="text" placeholder="User name" [(ngModel)]="user.username"  pInputText class="w-full md:w-30rem mb-5" style="padding:1rem" required>
+			</div>
+			<div class="input">
+			  <label for="email1" class="block text-900 text-xl font-medium mb-2">Email</label>
+			  <input id="email1" type="text" [(ngModel)]="user.email" placeholder="Email address" pInputText class="w-full md:w-30rem mb-5" style="padding:1rem" required>
+			</div>
+			<div class="input">
+			  <label for="phone" class="block text-900 text-xl font-medium mb-2">Phone</label>
+			  <input id="phone" type="text" [(ngModel)]="user.phone" placeholder="Phone" pInputText class="w-full md:w-30rem mb-5" style="padding:1rem" required>
+			</div>
+			<div class="input">
+			  <label for="password1" class="block text-900 font-medium text-xl mb-2">Password</label>
+			  <p-password id="password1" [(ngModel)]="user.password" placeholder="Password" [toggleMask]="true" styleClass="mb-5" inputStyleClass="w-full p-3 md:w-30rem" required></p-password>
+			</div>
+
+			<!-- Confirm Password input -->
+			<div class="input">
+			  <label for="password2" class="block text-900 font-medium text-xl mb-2">Confirm Password</label>
+			  <p-password id="password2" [(ngModel)]="user.confirmPassword" placeholder="Confirm Password" [toggleMask]="true" styleClass="mb-5" inputStyleClass="w-full p-3 md:w-30rem" required></p-password>
+			</div>
+
+		<div class="remember">
+			<div class="check">
+				<p-checkbox id="rememberme1" [binary]="true" styleClass="mr-2"></p-checkbox>
+				<label for="rememberme1">Remember me</label>
+			</div>
+			<a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)">Forgot password?</a>
+		</div>
+		<button  style="width: 100%; background-color: #4274BF;border-radius: 10px;margin: 10px;" (click)="register()" pButton pRipple label="CREEZ UN COMPTE" class="w-full p-3 text-xl" ></button>
+
+		<div class="questions">
+			<div class="bar"></div>
+			Ou
+			<div class="bar"></div>
+		</div>
+		<div class="link">
+			Pas encore inscris ? <a href="/login">s’inscrire maintenant</a>
+		</div>
+	</div>
+</div>
+

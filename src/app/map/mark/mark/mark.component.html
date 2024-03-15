@@ -1,0 +1,84 @@
+
+<div class="swiper-container">
+	<div class="swiper-wrapper">
+	  <div class="swiper-slide" *ngFor="let file of medias">
+		<a [routerLink]="'annouce/' + id">
+			<img [src]="file.mediaUrl" width="130px" height="100px" style="border-radius: 10px;" alt="">
+		  </a>
+</div>
+	  <!-- Add more slides as needed -->
+	</div>
+</div>
+<div class="details">
+	<div class="desc">
+		{{annouce.description}}
+		</div>
+
+		<div class="prix">
+		<div class="title">
+			Prix :
+		</div><div class="span">
+				{{annouce.price}} {{annouce.currency}}
+			</div>
+		</div>
+<div class="more-details">
+<div class="left">
+<div class="prix">
+	<div class="title">
+		Surface :
+	</div>
+	<div class="span">
+		{{annouce.totalSurface}} <span style="font-weight: bold;">m2</span>
+	</div>
+
+</div>
+<div class="prix">
+	<div class="title">
+	Chambre :
+	</div>
+	<div class="span">
+		{{annouce.bedrooms}}
+	</div>
+</div>
+<div class="prix">
+	<div class="title">
+	Salon :
+	</div>
+	<div class="span">
+		{{annouce.fairs}}
+	</div>
+</div>
+</div>
+<div class="right">
+	<div class="prix">
+		<div class="title">
+		Salle de bain :
+		</div>
+		<div class="span">
+			{{annouce.bathrooms}}
+		</div>
+	</div>
+</div>
+</div>
+<div class="footer">
+	<div class="avatar">
+		<div class="img">
+			<img style="width: 30px; border-radius: 100%; height: 30px;" [src]="annouce.userPhoto || default" alt="">
+		</div>
+		<div class="username">{{annouce.userName}}</div>
+	</div>
+	<div class="phone">
+		<div class="whatssap">
+			<a target="_blank" href="https://api.whatsapp.com/send?phone={{annouce.phone}}&text=Hello%20World!">
+				<img style="width: 30px; height: 30px" src="./../../../../assets/images/whatsapp.png" />
+			</a>
+		</div>
+		<div class="phone">
+			<a target="_blank" href="tel:{{annouce.phone}}">
+				<img style="width: 30px; height: 30px" src="./../../../../assets/images/phone.png" />
+			</a>
+		</div>
+	</div>
+
+</div>
+</div>

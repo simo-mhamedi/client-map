@@ -1,0 +1,10 @@
+
+<div leaflet
+     id="map"
+     [leafletOptions]="options"
+     [leafletZoom]="zoom"
+     (leafletZoomChange)="onZoomChange($event)"
+     [leafletCenter]="center"
+	 [leafletLayers]="markers">
+     (leafletCenterChange)="onCenterChange($event)">
+</div>

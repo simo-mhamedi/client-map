@@ -1,0 +1,73 @@
+<div class="header" *ngIf="!isSearchIt">
+	Filtrer
+	<i (click)="back()" class="fa-solid fa-xmark close"></i>
+</div>
+
+<div class="user-data" *ngIf="!isSearchIt">
+	<div class="form">
+		<div class="category">
+			<div class="input">
+				<label for="name">Categorie</label>
+				<p-dropdown [options]="categorys" [(ngModel)]="selectedCategory" optionLabel="categorieName" [showClear]="true" placeholder="Select a Category"></p-dropdown>
+			</div>
+
+		</div>
+
+		<div class="phone">
+
+			  <div class="span">
+				Announcement Type
+			</div>
+			  <div class="radios">
+
+				<div class="radio">
+					<p-radioButton name="pizza" value="Cheese" [(ngModel)]="isWind" (click)="isWindFunc()" inputId="ingredient1"></p-radioButton>
+					<label>Vente</label>
+				</div>
+				<div class="radio">
+					<p-radioButton name="pizza" value="Mushroom" [(ngModel)]="isAsk"  (click)="isAskFunc()" inputId="ingredient2"></p-radioButton>
+					<label >Demande</label>
+				</div>
+			</div>
+			<div class="span">
+				Address
+			</div>
+			<div id="search-container">
+				<input google-place
+				[(ngModel)]="query"
+				required="true"
+				(input)="onLocationChange(query)"
+				(placeChanged)="onLocationSelect($event)"
+				placeholder="chercher">
+				<ul *ngIf="showDropdown">
+					<li *ngFor="let location of locations"  (click)="searchLocation(location.formatted)">
+					  {{ location.formatted }}
+					</li>
+				  </ul>
+				</div>
+		</div>
+
+		<div class="price">
+			<div class="span">
+				Price range
+			</div>
+			<p-slider [(ngModel)]="rangeValues" [range]="true"></p-slider>
+<div class="infos">
+	<p>{{ rangeValues[0] }}$</p>
+
+	<!-- Or use the value in other parts of your template -->
+	<div>
+	  <p>{{ rangeValues[1] }}$</p>
+</div>
+			<!-- Display the input value below the input field -->
+
+			  <!-- You can use the value in other HTML elements or Angular directives -->
+			</div>
+
+		</div>
+	</div>
+	<button (click)="toMap()" class="btn btn-primary next">Continuer</button>
+</div>
+<div class="search" *ngIf="isSearchIt">
+	<app-search-results [annoucment]="annoucment" [area]="query"></app-search-results>
+</div>

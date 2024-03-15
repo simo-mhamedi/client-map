@@ -1,0 +1,390 @@
+.header{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 10px;
+	justify-content: center;
+    gap: 15px;
+	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.icons,.active{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	padding: 5px;
+	width: 43px;
+	font-size: 20px;
+	height: 43px;
+	text-align: center;
+	background: #D9D9D9; border-radius: 9999px
+}
+
+.active{
+	color: white;
+	background-color:#42B8BF;
+}
+.user-data{
+	.title{
+		margin: 30px;
+		text-align: center;
+		color: black; font-size: 18px; font-weight: 500; letter-spacing: 0.92px; word-wrap: break-word
+	}
+}
+:host ::ng-deep .p-dropdown {
+	width: 100%;
+  }
+
+	.category{
+	font-weight: bold;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.radios{
+	margin-top: 20px;
+}
+.radios,.radio{
+
+	gap: 20px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+.phone
+{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	.span{
+		font-weight: bold;
+	}
+	padding: 10px;
+	input{
+		width: 100%;
+	}
+	.section-title{
+		font-weight: bold;
+		font-size: 23px;
+	}
+	.label{
+		margin-bottom: 10px;
+	}
+}
+.input-container {
+	position: relative;
+  }
+
+  .icon-container {
+	position: absolute;
+	left: 10px; /* Adjust the left position according to your preference */
+	top: 50%;
+	transform: translateY(-50%);
+	color: #555; /* Adjust the color according to your preference */
+  }
+
+  .input-container input {
+	padding-left: 30px; /* Adjust the padding according to the icon's width */
+  }
+.next{
+	border-radius: 10px;
+	padding: 10px;
+	background-color: #4274BF;
+	margin-top: 40px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+.map,#map{
+	height:77vh
+}
+.btn-map{
+	margin-top: 10px;
+}
+.map-container {
+	position: relative;
+  }
+
+  #map {
+	z-index: 1; /* Set a higher z-index for the map */
+	width: 100%; /* Adjust as needed */
+	height: 100vh; /* Adjust as needed */
+  }
+
+  .btn-map {
+	left: 25%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #42B8BF;
+	position: absolute;
+	bottom: 50px; /* Adjust as needed */
+	z-index: 100; /* Ensure the button appears above the map */
+  }
+
+  #search-container {
+	position: absolute;
+	top: 100px;
+	right: 10px;
+	z-index: 1000;
+	background-color: #fff;
+	padding: 10px;
+	border-radius: 15px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+input {
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	width: 100%;
+  }
+
+  ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+  }
+
+  li {
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	cursor: pointer;
+  }
+
+  li:hover {
+	background-color: #f5f5f5;
+  }
+  }
+
+  #search-input {
+	width: 150px;
+	padding: 5px;
+  }
+
+  #search-button {
+	padding: 5px 10px;
+	cursor: pointer;
+  }
+.close{
+	position: absolute;
+    top: 7px;
+    right: 12px;
+    font-size: 26px;
+}
+.annouce-details{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 20px;
+	padding: 40px;
+	.title{
+		// Détails de l’annonce
+		color: black;
+		font-size: 18px;
+		font-weight: 500;
+		letter-spacing: 0.92px;
+		word-wrap: break-word
+	}
+	.span{
+// Chambres
+		color: black;
+		font-size: 14px;
+		font-weight: 600;
+		letter-spacing: 0.92px;
+		word-wrap: break-word
+	}
+	.up,.down{
+		text-align: center;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+	}
+.price{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	input{
+    width: 60%;
+	}
+}
+}
+:host ::ng-deep  .p-inputnumber {
+	width: 20%;
+
+}
+:host ::ng-deep  .p-element {
+	margin-left: auto;
+	margin-right: auto;
+}
+:host ::ng-deep  .p-inputnumber-buttons-vertical {
+	flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+}
+:host ::ng-deep  #vertical {
+	border: none;
+	width: 40px;;
+}
+:host ::ng-deep #vertical1  {
+	.p-button{
+		border-radius: 50%;
+		margin-left: 10px;
+		width: 40px;
+		background-color: #D9D9D9;
+		border-color: transparent;
+		color: black;
+		height: 40px;
+	}
+
+}
+
+  :host ::ng-deep    .p-inputtext:enabled:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: none !important;
+  }
+
+  .input-container input {
+	width: 100%; /* Adjust the padding according to the icon's width */
+  }
+
+  .surface,.state-details{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+
+	gap: 20px;
+  }
+.desc{
+	width: 100%;
+	textarea{
+		width: 100%;
+	}
+}
+.up,
+.down{
+	.span{
+		margin-bottom: 10px;
+	}
+}
+:host ::ng-deep  .p-chips {
+	width: 100% !important;
+	ul{
+		width: 100% !important;
+	}
+}
+.photos{
+	.title{
+		text-align: center	;
+		color: black;
+		font-size: 18px;
+		font-weight: 500;
+		letter-spacing: 0.92px;
+		word-wrap: break-word
+	}
+	.span{
+		margin-top: 10px;
+		margin-left: 10px;
+		// Ajouter au moins 5 photo de votre bien
+		color: black;
+		font-size: 12px;
+		font-weight: 500;
+		letter-spacing: 0.92px;
+		word-wrap: break-word
+	}
+}
+
+.card {
+	border-color: transparent;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 10px;
+	justify-content: center;
+	margin-top: 1rem;
+    background: var(--surface-card);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+:host ::ng-deep  .p-fileupload .p-fileupload-buttonbar {
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+:host ::ng-deep  .p-fileupload-filename {
+	display: none;
+}
+:host ::ng-deep .p-toast{
+	display: none;
+}
+:host ::ng-deep  .p-fileupload .p-fileupload-buttonbar  {
+	padding: 1.25rem !important;
+}
+:host ::ng-deep  .p-button  {
+	cursor: pointer;
+	text-transform: uppercase;
+	border-radius: 10px;
+	border-color: #42B8BF;
+	background-color: #42B8BF	;
+	padding: 7px !important;
+}
+.photos{
+	padding-top: 40px;
+
+}
+.user-data {
+	width: 50%;
+	margin: auto;
+  }
+
+  /* Media query for screens with a maximum width of 768 pixels */
+  @media (max-width: 768px) {
+	.user-data {
+	  width: 80%; /* Adjust the width for smaller screens */
+	}
+  }
+
+  /* Media query for screens with a maximum width of 576 pixels */
+  @media (max-width: 576px) {
+	.user-data {
+	  width: 90%; /* Adjust the width for even smaller screens */
+	}
+  }
+.annouce-details{
+	margin-left: auto;
+    margin-right: auto;
+	width: 50%;
+  }
+
+  /* Media query for screens with a maximum width of 768 pixels */
+  @media (max-width: 768px) {
+	.annouce-details {
+	  width: 90%; /* Adjust the width for smaller screens */
+	}
+  }
+
+  /* Media query for screens with a maximum width of 576 pixels */
+  @media (max-width: 576px) {
+	.annouce-details {
+	  width: 100%; /* Adjust the width for even smaller screens */
+	}
+  }
+/* component.css */
+:host ::ng-deep .p-multiselect  {
+	width: 100%;
+  }

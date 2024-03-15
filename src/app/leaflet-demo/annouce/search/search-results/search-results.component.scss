@@ -1,0 +1,27 @@
+#map {
+	height: 89vh;
+  }
+
+  @media (max-width: 1800px) {
+	#map {
+	  height: 85vh;
+	}
+  }
+
+  @media (max-width: 992px) {
+	#map {
+	  height: 84vh;
+	}
+  }
+
+  @media (max-width: 768px) {
+	#map {
+	  height: 84vh;
+	}
+  }
+
+  @media (max-width: 576px) {
+	#map {
+	  height: 84	vh;
+	}
+  }

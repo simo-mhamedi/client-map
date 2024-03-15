@@ -1,0 +1,41 @@
+<app-dashboard></app-dashboard>
+<div class="header">
+	<div class="profile-pic">
+		<div class="avatar">
+			<img width="100" height="100" src="{{user.profileImageUrl || defaultImg}}" alt="">
+		</div>
+	</div>
+	<div class="name">
+		<div class="user-name">
+			{{user.username}}
+		</div>
+		<div class="phone">
+			{{user.phone}}
+		</div>
+	</div>
+</div>
+
+<div class="form">
+		<div class="inputs">
+			<div class="input">
+			  <label for="username" class="block text-900 text-xl font-medium mb-2">User name</label>
+			  <input id="username" type="text" placeholder="User name" [(ngModel)]="user.username"  pInputText class="w-full md:w-30rem mb-5" style="padding:1rem" required>
+			</div>
+			<div class="input">
+			  <label for="email1" class="block text-900 text-xl font-medium mb-2">Email</label>
+			  <input id="email1" type="text" [(ngModel)]="user.email" placeholder="Email address" pInputText class="w-full md:w-30rem mb-5" style="padding:1rem" required>
+			</div>
+			<div class="input">
+			  <label for="phone" class="block text-900 text-xl font-medium mb-2">Phone</label>
+			  <input id="phone" type="text" [(ngModel)]="user.phone" placeholder="Phone" pInputText class="w-full md:w-30rem mb-5" style="padding:1rem" required>
+			</div>
+<div class="footer">
+	<div class="input">
+		<p-fileUpload mode="basic" name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*" [maxFileSize]="1000000" (onUpload)="onBasicUploadAuto($event)" [auto]="true" chooseLabel="Uplaod image"></p-fileUpload>
+	  </div>
+	  <div class="save">
+		<button class="btn btn-primary" (click)="updateUser()">Save</button>
+	  </div>
+</div>
+</div>
+<app-footer></app-footer>

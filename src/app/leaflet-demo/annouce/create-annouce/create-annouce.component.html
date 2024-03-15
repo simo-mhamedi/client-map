@@ -1,0 +1,201 @@
+<div class="header">
+	<ng-container *ngFor="let section of ['userData', 'mapData', 'detailsData', 'photosData']; let last = last">
+	  <div (click)="showData(section)" [ngClass]="{icons: !this['is' + section.charAt(0).toUpperCase() + section.slice(1)], active: this['is' + section.charAt(0).toUpperCase() + section.slice(1)]}">
+		<i class="fa-solid" [ngClass]="{'fa-file-invoice': section === 'userData', 'fa-map': section === 'mapData', 'fa-file-contract': section === 'detailsData', 'fa-regular fa-image': section === 'photosData'}"></i>
+	  </div>
+	  <ng-container *ngIf="!last"><i class="fa-solid fa-angle-right"></i></ng-container>
+	</ng-container>
+	<i (click)="back()" class="fa-solid fa-xmark close"></i>
+  </div>
+
+  <!-- Other content for each section -->
+
+<!-- Other content for each section -->
+
+<div class="user-data" *ngIf="isUserData">
+	<div class="title">
+		Qu’annoncez vous aujourdhui ?
+	</div>
+	<div class="form">
+		<div class="category">
+			<div class="input">
+				<label for="name">Categorie</label>
+				<p-dropdown [options]="categorys" [(ngModel)]="selectedCategory" optionLabel="categorieName" [showClear]="true" placeholder="Select a Category"></p-dropdown>
+			</div>
+		</div>
+
+		<div class="phone">
+			<div class="span">
+				Numéro de téléphone
+			</div>
+			<div class="input">
+				<div class="input-container">
+				  <div class="icon-container">
+					<i class="fas fa-phone"></i>
+				  </div>
+				  <input type="text" [(ngModel)]="announcementDto.phone" pInputText placeholder="Enter your phone number" />
+				</div>
+			  </div>
+			  <div class="span">
+				Announcement Type
+			</div>
+			  <div class="radios">
+				<div class="radio">
+					<p-radioButton name="pizza" value="Cheese" [(ngModel)]="isWind" (click)="isWindFunc()" inputId="ingredient1"></p-radioButton>
+					<label>Vente</label>
+				</div>
+				<div class="radio">
+					<p-radioButton name="pizza" value="Mushroom" [(ngModel)]="isAsk"  (click)="isAskFunc()" inputId="ingredient2"></p-radioButton>
+					<label >Location</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	<button (click)="toMap()" class="btn btn-primary next">Continuer</button>
+</div>
+<div class="map" *ngIf="isMapData">
+	<div id="search-container">
+		<input google-place
+		[(ngModel)]="query"
+		(input)="onLocationChange(query)"
+		(placeChanged)="onLocationSelect($event)"
+		placeholder="chercher">
+		<ul *ngIf="showDropdown">
+			<li *ngFor="let location of locations"  (click)="searchLocation(location.formatted)">
+			  {{ location.formatted }}
+			</li>
+		  </ul>
+		</div>
+		<div leaflet
+		id="map"
+		[leafletOptions]="options"
+		[leafletZoom]="zoom"
+		(leafletZoomChange)="onZoomChange($event)"
+		[leafletCenter]="center"
+		[leafletLayers]="markers"
+		(leafletClick)="onMapClick($event)"
+		(leafletCenterChange)="onCenterChange($event)">
+   </div>
+
+<button (click)="toDetails()" class="btn btn-primary next btn-map">Continuer</button>
+</div>
+<div class="annouce-details" *ngIf="isDetailsData">
+	<div class="title">
+		Détails de l’annonce
+	</div>
+	<div class="up">
+		<div class="chambre">
+			<div class="span">Chambres</div>
+
+			<p-inputNumber spinnerMode="horizontal"
+			[min]="0"
+			[(ngModel)]="announcementDto.bathrooms"			[min]="0"
+			id="vertical1" [showButtons]="true" buttonLayout="vertical" spinnerMode="vertical" inputId="vertical" decrementButtonClass="p-button-secondary"
+		incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus" ></p-inputNumber>
+		</div>
+		<div class="salon">
+			<div class="span">Salons</div>
+			<p-inputNumber [(ngModel)]="announcementDto.fairs" 			[min]="0"
+			id="vertical1" [showButtons]="true" buttonLayout="vertical" spinnerMode="vertical" inputId="vertical" decrementButtonClass="p-button-secondary"
+		incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus" ></p-inputNumber>
+		</div>
+	</div>
+<div class="down">
+	<div class="salle-bain">
+		<div class="span">Salle de bain</div>
+		<p-inputNumber  [(ngModel)]="announcementDto.bedrooms"			[min]="0"
+		id="vertical1" [showButtons]="true" buttonLayout="vertical" spinnerMode="vertical" inputId="vertical" decrementButtonClass="p-button-secondary"
+    incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus" ></p-inputNumber>
+	</div>
+	<div class="etage">
+		<div class="span">Etage</div>
+		<p-inputNumber [(ngModel)]="announcementDto.floors"			[min]="0"
+		id="vertical1" [showButtons]="true" buttonLayout="vertical" spinnerMode="vertical" inputId="vertical" decrementButtonClass="p-button-secondary"
+    incrementButtonClass="p-button-secondary" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus" ></p-inputNumber>
+	</div>
+</div>
+	<div class="surface">
+		<div class="sur-one">
+			<div class="span">
+				Surface habitale
+			</div>
+			<div class="surf">
+				<div class="input">
+					<div class="input-container">
+					  <div class="icon-container">
+						<i class="fas fa-area-chart"></i>
+					  </div>
+					  <input type="number" pInputText  [(ngModel)]="announcementDto.livingSpace" placeholder="Surface habitale m2" />
+					</div>
+				  </div>
+
+			</div>
+		</div>
+		<div class="sur-two">
+			<div class="span">
+				Surface Totale
+			</div>
+			<div class="surf">
+
+				<div class="input">
+					<div class="input-container">
+					  <div class="icon-container">
+						<i class="fas fa-area-chart"></i>
+					  </div>
+					  <input type="number"  [(ngModel)]="announcementDto.totalSurface" pInputText placeholder="Surface Totale m2" />
+					</div>
+				  </div>
+
+			</div>
+		</div>
+	</div>
+	<div class="state-details">
+		<div class="age">
+
+
+			<label for="name">Age du bien</label>
+			<p-dropdown [options]="ages" [(ngModel)]="announcementDto.age" [showClear]="true" placeholder="Age du bien"></p-dropdown>
+		</div>
+		<div class="span">
+			Prix
+		</div>
+		<div class="price">
+
+			<input type="number"  [(ngModel)]="announcementDto.price" pInputText placeholder="Prix" />
+
+			<p-dropdown [options]="currencies" [(ngModel)]="announcementDto.currency"  [showClear]="true" placeholder="Currency"></p-dropdown>
+		</div>
+	</div>
+	<div class="desc">
+		<div class="span">
+			Descriptif du bien
+		</div>
+		<textarea rows="5" cols="30" pInputTextarea [(ngModel)]="announcementDto.description"></textarea>
+<div class="span">
+	Plus details
+</div>
+<p-multiSelect [options]="moreDetails" [(ngModel)]="selectedMoreDetails" placeholder="Select more infos" optionLabel="info"></p-multiSelect>
+
+<button (click)="toPhotos()" class="btn btn-primary next">Continuer</button>
+</div>
+</div>
+<div class="photos"	*ngIf="isPhotosData">
+	<div class="title">
+		Ajouter photos de votre bien
+	</div>
+
+	<div class="card">
+		<div class="span">
+			Ajouter au moins 5 photo de votre bien
+		</div>
+		<p-toast></p-toast>
+		<p-fileUpload name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" (onUpload)="onUpload($event)" [multiple]="true" accept="image/*" >
+			<ng-template pTemplate="content">
+				<ul *ngIf="uploadedFiles.length">
+					<li *ngFor="let file of uploadedFiles">{{ file.name }} - {{ file.size }} bytes</li>
+				</ul>
+			</ng-template>
+		</p-fileUpload>
+	</div>
+</div>
+

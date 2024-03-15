@@ -1,0 +1,64 @@
+
+:host ::ng-deep .p-sidebar .p-sidebar-header {
+	background-color: #D2FBFD;
+	padding: 10px  !important;
+
+}
+:host ::ng-deep .p-sidebar .p-sidebar-content {
+	padding: 0 !important;
+
+}
+.side-content{
+	margin: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	button{
+		width: 90%;
+	}
+}
+.login{
+	background: #4274BF;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+}
+.insert-ann{
+	background: #42B8BF
+
+}
+.service-list{
+	margin-top: 30px;
+	margin-left: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: left;
+	gap: 10px;
+}
+.service{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	font-size: 20px;
+}
+// :host ::ng-deep{
+// 	.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+// 		--gradient-start: #99E5A2;
+// 		--gradient-start-text: '#99E5A2';
+// 		--gradient-end: #D4FC78;
+// 		--gradient-end-text: '#D4FC78';
+// 		background: linear-gradient(33deg, var(--gradient-start), var(--gradient-end)) !important;
+// 	}
+// 	}
+
+
+/* leaflet-core-demo.component.css */
+
+

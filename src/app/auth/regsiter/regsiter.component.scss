@@ -1,0 +1,137 @@
+.inputs{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+	justify-content: center;
+	width: 90%;
+}
+.input{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.remember{
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+.check{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 5px;
+}
+:host ::ng-deep{
+	.p-inputtext{
+		width: 100% !important;
+	}
+	#password1,.p-password ,#password2{
+		width: 100% !important;
+	}
+}
+.hearder-text{
+	font-weight: bold;
+	font-size: 25px;
+	margin: 40px;
+	text-align: center;
+}
+.hearder{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+	button{
+margin: 5px;
+font-size: 20px;
+	}
+}
+@media (min-width: 768px) {
+	.form {
+		margin: auto;
+	  width: 50%; /* Adjust the width for smaller screens */
+	}
+  }
+
+.side-header{
+	background-color: #D2FBFD;
+	width: 100%;
+	padding: 5px 20px 5px 20px;
+	h3{
+		font-weight: bold;
+	}
+}
+:host ::ng-deep .p-sidebar .p-sidebar-header {
+	background-color: #D2FBFD;
+	padding: 10px  !important;
+
+}
+:host ::ng-deep .p-sidebar .p-sidebar-content {
+	padding: 0 !important;
+
+}
+.side-content{
+	margin: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	button{
+		width: 90%;
+	}
+}
+.login{
+	background: #4274BF;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+}
+.insert-ann{
+	background: #42B8BF
+
+}
+.service-list{
+	margin-top: 30px;
+	margin-left: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: left;
+	gap: 10px;
+}
+.service{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	font-size: 20px;
+}
+.questions{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+.bar{
+	height: 2px;
+	width: 20px;
+	background-color: darkgray;
+}
+.link{
+margin: 20px;
+	a{
+		color: #4274BF;
+		cursor: pointer;
+	 }
+
+}

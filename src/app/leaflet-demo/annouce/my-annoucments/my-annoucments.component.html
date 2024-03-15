@@ -1,0 +1,32 @@
+
+<app-dashboard></app-dashboard>
+<div class="back"><a href="/"><i class="fa-solid fa-circle-left"></i> Back</a></div>
+
+<div class="container" *ngIf="annouce.length>0">
+	<div  class="list" *ngFor="let item of annouce">
+			<div class="item">
+			<div class="image">
+				<a [href]="'annouce/' + item.id">
+
+				<img [src]="item.mediaFiles[0].mediaUrl" alt="">
+			</a>
+
+			</div>
+			<div class="infos">
+				<div class="title">{{item.description.substring(0,50)}}</div>
+				<div class="prix">				{{item.price}} {{item.currency}}
+				</div>
+				<div class="like">
+					<i  (click)="toggleFavorite(item.id)"  class="fa-solid fa-xmark"></i>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+<div class="empty" *ngIf="annouce.length==0">
+
+	<div class="infos">
+		Oups, il n'y a aucun article ... <i class="fa-solid fa-file-contract"></i>
+	</div>
+</div>

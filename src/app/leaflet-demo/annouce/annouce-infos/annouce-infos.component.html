@@ -1,0 +1,98 @@
+<app-dashboard></app-dashboard>
+<div class="swiper-container">
+	<div class="swiper-wrapper">
+	  <div class="swiper-slide" *ngFor="let file of medias">
+		<img [src]="file.mediaUrl" width="350px" height="250px" style="border-radius: 4px;" alt="">
+		</div>
+	  <!-- Add more slides as needed -->
+	</div>
+</div>
+<div class="details">
+	<div class="footer">
+		<div class="avatar">
+			<div class="img">
+				<img style="width: 30px; border-radius: 100%; height: 30px;" [src]="annouce.userPhoto || default" alt="">
+			</div>
+			<div class="username">{{annouce.userName}}</div>
+		</div>
+
+		<div class="phone">
+			<div class="whatssap">
+				<a target="_blank" href="https://api.whatsapp.com/send?phone={{annouce.phone}}&text=Hello%20World!">
+					<img style="width: 30px; height: 30px" src="./../../../../assets/images/whatsapp.png" />
+				</a>
+			</div>
+			<div class="phone">
+				<a target="_blank" href="tel:{{annouce.phone}}">
+					<img style="width: 30px; height: 30px" src="./../../../../assets/images/phone.png" />
+				</a>
+			</div>
+			<div *ngIf="checkUserConnected()">
+				<i *ngIf="!isFavoriteActive"  (click)="toggleFavorite()"  class="fa-regular fa-heart"></i>
+				<i *ngIf="isFavoriteActive"  (click)="toggleFavorite()"   class="fa-solid fa-heart"></i>
+			</div>
+		</div>
+
+	</div>
+	<div class="prix prix-pos">
+		<div class="title">
+			Prix :
+		</div><div class="span">
+				{{annouce.price}} {{annouce.currency}}
+			</div>
+		</div>
+		<div class="more_infos">
+			Description		</div>
+	<div class="desc">
+
+		{{annouce.description}}
+		</div>
+
+
+
+		<div class="more_infos">
+			More infos
+		</div>
+<div class="more-details">
+<div class="left">
+<div class="prix">
+	<div class="title">
+		Surface :
+	</div>
+	<div class="span">
+		{{annouce.totalSurface}} <span style="font-weight: bold;">m2</span>
+	</div>
+
+</div>
+<div class="prix">
+	<div class="title">
+	Chambre :
+	</div>
+	<div class="span">
+		{{annouce.bedrooms}}
+	</div>
+</div>
+<div class="prix">
+	<div class="title">
+	Salon :
+	</div>
+	<div class="span">
+		{{annouce.fairs}}
+	</div>
+</div>
+</div>
+<div class="right">
+	<div class="prix">
+		<div class="title">
+		Salle de bain :
+		</div>
+		<div class="span">
+			{{annouce.bathrooms}}
+		</div>
+	</div>
+</div>
+</div>
+
+</div>
+
+<app-footer></app-footer>

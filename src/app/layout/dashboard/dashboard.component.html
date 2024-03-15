@@ -1,0 +1,53 @@
+<div class="hearder">
+	<button (click)="sidebarVisible=true" type="button" class="btn menu"><i class="fa-solid fa-bars"></i> </button>
+	<button (click)="search()" type="button" class="btn search"><i class="fa-solid fa-magnifying-glass"></i> </button>
+</div>
+<p-sidebar [(visible)]="sidebarVisible">
+	<div class="side-header">
+		<img *ngIf="user!=null && user.profileImageUrl!=null" width="50px" height="50px" style="border-radius: 100%; margin-bottom: 5px;" [src]="user.profileImageUrl" alt="">
+		<img *ngIf="user==null ||user.profileImageUrl==null " width="50px" height="50px" style="border-radius: 100%; margin-bottom: 5px;" [src]="defaultImg" alt="">
+		<h3>Bienvenue,<div class="userName" *ngIf="user!=null">
+		{{user.username}}</div></h3>
+		<p>
+			pour une bonne experience
+		</p>
+	</div>
+	<div class="side-content">
+		<a style="width: 90%;"  *ngIf="!checkUserConnected()" [routerLink]="'/login'">
+			<span class="btn btn-primary login"><i class="fa-regular fa-user"></i> <span> SE CONNECTER</span></span>
+		</a>
+
+		<a style="width: 90%;"  (click)="create()">
+			<span class="btn btn-success insert-ann"> <span> Déposer une annonce</span></span>
+		</a>
+
+	</div>
+	<div class="service-list">
+		<a href="/search">
+		<div class="service">
+			<i class="fa-solid fa-location-dot"></i>
+			<span>Découvrir</span>
+		</div>
+	</a>
+		<div class="service">
+			<i class="fa-regular fa-comment"></i>
+			<span>Chat</span>
+		</div>
+		<div class="service">
+			<i class="fa-solid fa-headset"></i>
+			<span>Support</span>
+		</div>
+		<div class="service">
+			<i class="fa-regular fa-heart"></i>
+			<span>Favoris</span>
+		</div>
+		<div class="service">
+			<i class="fa-regular fa-flag"></i>
+			<span>Francais</span>
+		</div>
+		<div class="service" *ngIf="checkUserConnected()" style="cursor: pointer;" (click)="logOut()">
+			<i class="fa-solid fa-right-from-bracket"></i>
+			<span>Log out</span>
+		</div>
+	</div>
+</p-sidebar>

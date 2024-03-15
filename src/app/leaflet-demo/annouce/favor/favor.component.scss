@@ -1,0 +1,150 @@
+.list{
+	width: 100%;
+	.item{
+		position: relative;
+		box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+		height: 120px;
+		padding: 5px;
+		display: flex;
+		border-radius: 5px;
+		flex-direction: row;
+		align-items: center;
+		gap:10px ;
+		font-size: 15px;
+		img{
+			border-radius: 5px;
+			width: 95px;
+			height: 100px;
+		}
+	}
+}
+
+.prix{
+	text-transform: uppercase;
+	color: green;
+	font-weight: bold;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+.like{
+position: absolute;
+top: 10px;
+right: 10px;
+font-size: 20px;
+color: red;
+}
+a
+{
+	color: black;
+}
+.empty {
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 80vh;
+  }
+  @keyframes jump {
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+	  transform: translateY(0);
+	}
+	40% {
+	  transform: translateY(-20px);
+	}
+	60% {
+	  transform: translateY(-10px);
+	}
+  }
+.container{
+	margin-bottom: 30px;
+}
+  .fa-solid.fa-file-contract {
+	animation: jump 1s ease infinite;
+	color: #4a9f00;
+  }
+  .hearder{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+	button{
+margin: 5px;
+font-size: 20px;
+	}
+}
+.side-header{
+	background-color: #D2FBFD;
+	width: 100%;
+	padding: 5px 20px 5px 20px;
+	h3{
+		font-weight: bold;
+	}
+}
+:host ::ng-deep .p-sidebar .p-sidebar-header {
+	background-color: #D2FBFD;
+	padding: 10px  !important;
+
+}
+:host ::ng-deep .p-sidebar .p-sidebar-content {
+	padding: 0 !important;
+
+}
+.side-content{
+	margin: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	button{
+		width: 90%;
+	}
+}
+.login{
+	background: #4274BF;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+}
+.insert-ann{
+	background: #42B8BF
+
+}
+.service-list{
+	margin-top: 30px;
+	margin-left: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: left;
+	gap: 10px;
+}
+.service{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	font-size: 20px;
+}
+.back{
+	padding: 10px;
+	font-weight: bold;
+	a{
+		text-decoration: none;
+	}
+}
